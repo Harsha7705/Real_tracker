@@ -4,25 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "node app.js", 
-  "build": "echo 'No build step for this app'"
-}
-,
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "react-scripts": "^5.0.1",
     "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
   },
     "builds": [
-      { "src": "app.js", "use": "@vercel/node" }
+      { "src": "package.json", "use": "@vercel/static-build" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/app.js" }
+      { "src": "/(.*)", "dest": "/index.html" }
     ]
+
 }
